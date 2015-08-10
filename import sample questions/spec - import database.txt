@@ -1,0 +1,3 @@
+1. Open cmd.exe in this folder
+2. Command line used: mongoimport --db Quiz --collection gkmodels --file sample.json
+	e.g.: C:\Users\Harry\Desktop\import sample questions (folder path)>mongoimport --db Quiz --collection gkmodels --file sample.json
