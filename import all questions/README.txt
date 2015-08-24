@@ -3,6 +3,7 @@ Open command prompt in this folder
 >mongo
 >use Quiz
 >db.dropDatabase()
+>exit
 
 2. Use the new one in "Quiz" folder:
 >mongorestore -d Quiz Quiz\
