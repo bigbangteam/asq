@@ -8,5 +8,5 @@ Open command prompt in this folder
 >mongorestore -d Quiz Quiz\
 
 3. Install one dependency for nodejs:
-Located at your project folder and open command prompt here
+Go to your project folder and open command prompt here
 >npm install
