@@ -197,23 +197,20 @@ app.post('/saveRecord', function (req, res) {
 });
 
 app.post('/getRecord', function (req,res) {
-    //get practise history logic
-    historyModel.find({
-        username:req.body.username,
-        mode:req.body.mode
-    })
-        .sort({time: -1})
-        .limit(req.body.number)
-        .exec(function (err, result) {
+    var query = req.body.date? {
+        email:req.body.email,
+        date:req.body.date
+    } : {
+        email:req.body.email
+    }
+    historyModel.find(query).exec(function (err, result) {
             res.send(result)
         })
-
 });
 
 app.post('/updateProfile', function(req,res){
-    userModel.find({email: req.body.email}, function (err, result) {
-        if(result && result.length > 0){
-            console.log(result);
+    userModel.findOne({email: req.body.email}, function (err, result) {
+        if(result && result.email){
             userModel.update({email:req.body.email},{
                 passwd1: req.body.passwd1,
                 firstName: req.body.firstName,
